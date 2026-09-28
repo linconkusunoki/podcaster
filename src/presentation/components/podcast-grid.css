@@ -1,0 +1,23 @@
+.podcast-grid-section {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.podcast-grid-section h2 {
+  margin: 0;
+  font-size: var(--text-2xl);
+}
+
+.podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.podcast-grid__empty {
+  margin: 0;
+  color: var(--color-ink-muted);
+}
