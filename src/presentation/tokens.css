@@ -10,9 +10,48 @@
   --color-focus: oklch(58% 0.17 250);
   --color-status: oklch(62% 0.15 75);
   --color-status-ink: oklch(15% 0.04 75);
+  --font-body: ui-sans-serif, system-ui, sans-serif;
+  --font-display: Georgia, serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: clamp(2.5rem, 6vw, 5rem);
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --page-gutter: clamp(1rem, 4vw, 3rem);
+  --content-width: 72rem;
+  --reading-width: 65ch;
+  --border-width: 1px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
 }
 
 body {
   background: var(--color-surface);
   color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+}
+
+p {
+  max-width: var(--reading-width);
 }

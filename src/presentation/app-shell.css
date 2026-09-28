@@ -1,5 +1,12 @@
 .app-header {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: var(--border-width) solid var(--color-border);
+  padding: var(--space-4) var(--page-gutter);
+}
+
+main {
+  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+  margin: 0 auto;
+  padding-block: var(--space-8);
 }
 
 .navigation-pending {
