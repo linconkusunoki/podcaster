@@ -2,6 +2,7 @@ import { createBrowserRouter, type LoaderFunctionArgs, type RouteObject } from '
 
 import { AppShell } from './app-shell'
 import { CatalogRoute, EpisodeRoute, PodcastRoute } from './route-placeholders'
+import { RouteErrorBoundary } from './route-error-boundary'
 
 export function podcastLoader({ params }: LoaderFunctionArgs) {
   return { podcastId: params.podcastId }
@@ -15,6 +16,7 @@ export const routes: RouteObject[] = [
   {
     path: '/',
     Component: AppShell,
+    ErrorBoundary: RouteErrorBoundary,
     children: [
       { index: true, Component: CatalogRoute },
       {
