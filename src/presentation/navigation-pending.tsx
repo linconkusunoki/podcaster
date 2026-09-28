@@ -1,5 +1,7 @@
 import { useNavigation } from 'react-router-dom'
 
+import { LoadingStatus } from './components/loading-status'
+
 export function NavigationPending() {
   const navigation = useNavigation()
 
@@ -7,9 +9,5 @@ export function NavigationPending() {
     return null
   }
 
-  return (
-    <div className="navigation-pending" role="status" aria-live="polite" aria-atomic="true">
-      Loading...
-    </div>
-  )
+  return <LoadingStatus className="navigation-pending" />
 }

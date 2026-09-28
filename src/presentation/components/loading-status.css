@@ -1,0 +1,26 @@
+.loading-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.loading-status__indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-status);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading-status__indicator {
+    animation: loading-status-pulse 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes loading-status-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
