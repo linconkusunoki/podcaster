@@ -16,3 +16,5 @@ export interface PodcastRepository {
   getDetails(id: Podcast['id']): Promise<PodcastDetails | null>
   getEpisode(podcastId: Podcast['id'], episodeId: Episode['id']): Promise<Episode | null>
 }
+
+export type PodcastCatalogRepository = Pick<PodcastRepository, 'list'>
