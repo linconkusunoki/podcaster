@@ -1,0 +1,9 @@
+.ui-input {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.ui-input__status {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
