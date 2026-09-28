@@ -7,10 +7,10 @@ export type PodcastGridProps = {
   title?: string
 }
 
-export function PodcastGrid({ podcasts, title = 'Top podcasts' }: PodcastGridProps) {
+export function PodcastGrid({ podcasts, title }: PodcastGridProps) {
   return (
-    <section className="podcast-grid-section" aria-label={title}>
-      <h2>{title}</h2>
+    <section className="podcast-grid-section" aria-label={title ?? 'Podcast catalog'}>
+      {title ? <h2>{title}</h2> : null}
       {podcasts.length > 0 ? (
         <ol className="podcast-grid">
           {podcasts.map((podcast, index) => (

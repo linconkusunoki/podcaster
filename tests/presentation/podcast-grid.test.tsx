@@ -12,7 +12,7 @@ describe('PodcastGrid', () => {
 
     render(
       <MemoryRouter>
-        <PodcastGrid podcasts={[firstPodcast, secondPodcast]} />
+        <PodcastGrid podcasts={[firstPodcast, secondPodcast]} title="Top podcasts" />
       </MemoryRouter>,
     )
 
