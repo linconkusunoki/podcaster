@@ -1,5 +1,7 @@
 import { Link, Outlet } from 'react-router-dom'
 
+import { NavigationPending } from './navigation-pending'
+
 export function AppShell() {
   return (
     <>
@@ -9,6 +11,7 @@ export function AppShell() {
       <main>
         <Outlet />
       </main>
+      <NavigationPending />
     </>
   )
 }
