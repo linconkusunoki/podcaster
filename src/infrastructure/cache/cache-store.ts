@@ -1,3 +1,4 @@
+export const CACHE_TTL_MS = 24 * 60 * 60 * 1000
 export const CATALOG_CACHE_KEY = 'podcast:catalog'
 
 export type CacheEntry<T> = {
@@ -34,4 +35,8 @@ export function createLocalStorageCacheStore(storage: Storage = localStorage): C
       storage.setItem(key, JSON.stringify({ value, cachedAt } satisfies CacheEntry<T>))
     },
   }
+}
+
+export function isCacheFresh(entry: CacheEntry<unknown>, now: number): boolean {
+  return now - entry.cachedAt < CACHE_TTL_MS
 }
