@@ -1,0 +1,14 @@
+.catalog-page {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.catalog-filter {
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .catalog-filter {
+    width: 50%;
+  }
+}

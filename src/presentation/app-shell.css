@@ -9,6 +9,8 @@
 }
 
 .brand-mark {
+  display: inline-flex;
+  align-items: baseline;
   color: var(--color-ink);
   font-family: var(--font-display);
   font-size: var(--text-xl);
@@ -18,11 +20,43 @@
 }
 
 .brand-mark__accent {
+  display: inline-block;
+  height: 1.1em;
+  overflow: hidden;
   color: var(--color-accent);
+  line-height: 1.1;
 }
 
-.brand-mark:hover .brand-mark__accent {
-  color: var(--color-ink);
+.brand-mark__track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 220ms ease;
+}
+
+.brand-mark__track > span {
+  height: 1.1em;
+  white-space: nowrap;
+}
+
+.brand-mark:hover .brand-mark__accent,
+.brand-mark:focus-visible .brand-mark__accent {
+  color: var(--color-focus);
+}
+
+.brand-mark:hover .brand-mark__track,
+.brand-mark:focus-visible .brand-mark__track {
+  transform: translateY(-1.1em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark__track {
+    transition: none;
+  }
+
+  .brand-mark:hover .brand-mark__track,
+  .brand-mark:focus-visible .brand-mark__track {
+    transform: none;
+  }
 }
 
 main {

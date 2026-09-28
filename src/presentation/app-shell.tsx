@@ -11,7 +11,12 @@ function ShellFrame({ children }: { children: ReactNode }) {
         <div className="app-header__inner">
           <Link className="brand-mark" to="/">
             <span>Pod</span>
-            <span className="brand-mark__accent">caster</span>
+            <span className="brand-mark__accent">
+              <span className="brand-mark__track">
+                <span>caster</span>
+                <span aria-hidden="true">caster</span>
+              </span>
+            </span>
           </Link>
         </div>
       </header>

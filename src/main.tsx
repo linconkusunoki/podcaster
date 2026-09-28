@@ -10,6 +10,7 @@ import './presentation/components/input.css'
 import './presentation/components/loading-status.css'
 import './presentation/components/podcast-card.css'
 import './presentation/components/podcast-grid.css'
+import './presentation/catalog-page.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
