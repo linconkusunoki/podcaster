@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router-dom'
 
 import { router } from '@/presentation/router'
 import './presentation/app-shell.css'
+import './presentation/tokens.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
