@@ -8,6 +8,7 @@ import './presentation/tokens.css'
 import './presentation/app-shell.css'
 import './presentation/components/input.css'
 import './presentation/components/loading-status.css'
+import './presentation/components/podcast-card.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
