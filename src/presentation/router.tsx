@@ -1,6 +1,7 @@
 import { createBrowserRouter, type LoaderFunctionArgs, type RouteObject } from 'react-router-dom'
 
-import { CatalogRoute, EpisodeRoute, PodcastRoute, RootLayout } from './route-placeholders'
+import { AppShell } from './app-shell'
+import { CatalogRoute, EpisodeRoute, PodcastRoute } from './route-placeholders'
 
 export function podcastLoader({ params }: LoaderFunctionArgs) {
   return { podcastId: params.podcastId }
@@ -13,7 +14,7 @@ export function episodeLoader({ params }: LoaderFunctionArgs) {
 export const routes: RouteObject[] = [
   {
     path: '/',
-    Component: RootLayout,
+    Component: AppShell,
     children: [
       { index: true, Component: CatalogRoute },
       {

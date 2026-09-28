@@ -1,9 +1,3 @@
-import { Outlet } from 'react-router-dom'
-
-export function RootLayout() {
-  return <Outlet />
-}
-
 export function CatalogRoute() {
   return <h1>Podcast catalog</h1>
 }
