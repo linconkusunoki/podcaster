@@ -1,15 +1,15 @@
 import type { ReactNode } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, ScrollRestoration } from 'react-router-dom'
 
 import { NavigationPending } from './navigation-pending'
 import { LoadingStatus } from './components/loading-status'
 
-function ShellFrame({ children }: { children: ReactNode }) {
+function ShellFrame({ children, headerStatus }: { children: ReactNode; headerStatus?: ReactNode }) {
   return (
     <>
       <header className="app-header">
         <div className="app-header__inner">
-          <Link className="brand-mark" to="/">
+          <Link className="brand-mark" to="/" viewTransition>
             <span>Pod</span>
             <span className="brand-mark__accent">
               <span className="brand-mark__track">
@@ -18,26 +18,25 @@ function ShellFrame({ children }: { children: ReactNode }) {
               </span>
             </span>
           </Link>
+          {headerStatus}
         </div>
       </header>
       <main>{children}</main>
+      <ScrollRestoration />
     </>
   )
 }
 
 export function AppShell() {
   return (
-    <ShellFrame>
+    <ShellFrame headerStatus={<NavigationPending />}>
       <Outlet />
-      <NavigationPending />
     </ShellFrame>
   )
 }
 
 export function InitialLoadingShell() {
   return (
-    <ShellFrame>
-      <LoadingStatus />
-    </ShellFrame>
+    <ShellFrame headerStatus={<LoadingStatus className="navigation-pending" />}>{null}</ShellFrame>
   )
 }

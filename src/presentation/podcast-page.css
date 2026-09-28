@@ -1,0 +1,11 @@
+.podcast-page {
+  display: grid;
+  gap: var(--space-12);
+}
+
+@media (min-width: 48rem) {
+  .podcast-page {
+    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+    align-items: start;
+  }
+}

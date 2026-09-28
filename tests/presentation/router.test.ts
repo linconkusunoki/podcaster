@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { LoaderFunctionArgs } from 'react-router-dom'
 
-import { episodeLoader, podcastLoader, routes } from '@/presentation/router'
+import { episodeLoader, routes } from '@/presentation/router'
 
 describe('router', () => {
   const loaderArgs = (params: Record<string, string>): LoaderFunctionArgs => ({
@@ -20,12 +20,6 @@ describe('router', () => {
       'podcasts/:podcastId',
       'podcasts/:podcastId/episodes/:episodeId',
     ])
-  })
-
-  it('passes dynamic Podcast IDs to loaders', () => {
-    expect(podcastLoader(loaderArgs({ podcastId: '42' }))).toEqual({
-      podcastId: '42',
-    })
   })
 
   it('passes dynamic Podcast and Episode IDs to loaders', () => {

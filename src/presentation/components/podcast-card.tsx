@@ -8,10 +8,18 @@ export type PodcastCardProps = {
 }
 
 export function PodcastCard({ podcast, rank }: PodcastCardProps) {
+  const href = `/podcasts/${podcast.id}`
+
   return (
     <article className="podcast-card">
-      <Link className="podcast-card__link" to={`/podcasts/${podcast.id}`}>
-        <img className="podcast-card__image" src={podcast.imageUrl} alt="" loading="lazy" />
+      <Link className="podcast-card__link" to={href} viewTransition>
+        <img
+          className="podcast-card__image"
+          src={podcast.imageUrl}
+          alt=""
+          loading="lazy"
+          style={{ viewTransitionName: `podcast-artwork-${podcast.id}` }}
+        />
         <div className="podcast-card__content">
           <span className="podcast-card__rank">#{rank}</span>
           <h2 className="podcast-card__title">{podcast.title}</h2>
