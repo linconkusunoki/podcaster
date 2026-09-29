@@ -1,12 +1,14 @@
 import { useLoaderData } from 'react-router-dom'
 
 import type { EpisodeDetails } from '@/application/ports/podcast-repository'
+import { usePageTitle } from '@/presentation/hooks/use-page-title'
 
 import { AudioPlayer } from './components/audio-player'
 import { PodcastSidebar } from './components/podcast-sidebar'
 
 export function EpisodePage() {
   const { podcast, episode } = useLoaderData() as EpisodeDetails
+  usePageTitle(`${episode.title} — Podcaster`)
 
   return (
     <div className="episode-page">

@@ -1,11 +1,13 @@
 import { useLoaderData, useSearchParams } from 'react-router-dom'
 
 import type { Podcast } from '@/domain/podcast'
+import { usePageTitle } from '@/presentation/hooks/use-page-title'
 
 import { Input } from './components/input'
 import { PodcastGrid } from './components/podcast-grid'
 
 export function CatalogPage() {
+  usePageTitle('Podcaster — Top Podcasts')
   const podcasts = useLoaderData() as Podcast[]
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get('q') ?? ''

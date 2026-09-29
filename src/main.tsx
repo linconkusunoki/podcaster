@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-
 import { router } from '@/presentation/router'
 import './presentation/styles/reset.css'
 import './presentation/styles/tokens.css'
