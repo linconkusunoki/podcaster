@@ -6,7 +6,7 @@ import { buildPodcast } from '../builders/podcast'
 import { PodcastSidebar } from '@/presentation/components/podcast-sidebar'
 
 describe('PodcastSidebar', () => {
-  it('renders non-interactive Podcast metadata and keeps description readable', () => {
+  it('links Podcast artwork and title and keeps description readable', () => {
     const podcast = buildPodcast({ description: 'A readable podcast description.' })
 
     render(
@@ -16,7 +16,7 @@ describe('PodcastSidebar', () => {
     )
 
     expect(screen.getByRole('heading', { name: podcast.title })).toBeInTheDocument()
-    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+    expect(screen.getByRole('link')).toHaveAttribute('href', `/podcasts/${podcast.id}`)
     expect(screen.getByRole('img', { name: podcast.title })).toHaveAttribute(
       'src',
       podcast.imageUrl,

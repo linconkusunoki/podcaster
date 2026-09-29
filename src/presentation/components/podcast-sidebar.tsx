@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import type { Podcast } from '@/domain/podcast'
 import { useIsOverflowing } from '@/presentation/hooks/use-is-overflowing'
@@ -19,14 +20,16 @@ export function PodcastSidebar({ podcast }: PodcastSidebarProps) {
   return (
     <aside className="podcast-sidebar" aria-labelledby="podcast-sidebar-title">
       <div className="podcast-sidebar__identity">
-        <img
-          className="podcast-sidebar__image"
-          src={podcast.imageUrl}
-          alt={podcast.title}
-          style={{ viewTransitionName: `podcast-artwork-${podcast.id}` }}
-        />
-        <div className="podcast-sidebar__metadata">
+        <Link className="podcast-sidebar__identity-link" to={`/podcasts/${podcast.id}`}>
+          <img
+            className="podcast-sidebar__image"
+            src={podcast.imageUrl}
+            alt={podcast.title}
+            style={{ viewTransitionName: `podcast-artwork-${podcast.id}` }}
+          />
           <h2 id="podcast-sidebar-title">{podcast.title}</h2>
+        </Link>
+        <div className="podcast-sidebar__metadata">
           <p>{podcast.author}</p>
         </div>
       </div>

@@ -1,0 +1,50 @@
+.episode-page {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.episode-page__content {
+  display: grid;
+  align-content: start;
+  gap: var(--space-6);
+}
+
+.episode-page__content h1,
+.episode-page__eyebrow {
+  margin: 0;
+}
+
+.episode-page__content h1 {
+  font-size: var(--text-xl);
+}
+
+.episode-page__eyebrow {
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.episode-page__metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  color: var(--color-ink-muted);
+}
+
+.episode-page__description {
+  max-width: var(--reading-width);
+  white-space: pre-line;
+}
+
+.episode-page__description :where(p, ul, ol) {
+  margin-block: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .episode-page {
+    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+    align-items: start;
+  }
+}

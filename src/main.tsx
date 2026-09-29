@@ -14,6 +14,7 @@ import './presentation/styles/podcast-sidebar.css'
 import './presentation/styles/episode-list.css'
 import './presentation/styles/audio-player.css'
 import './presentation/styles/podcast-page.css'
+import './presentation/styles/episode-page.css'
 import './presentation/styles/catalog-page.css'
 
 createRoot(document.getElementById('root')!).render(

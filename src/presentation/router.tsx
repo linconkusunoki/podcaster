@@ -5,7 +5,7 @@ import { CatalogPage } from './catalog-page'
 import { catalogLoader } from './loaders/catalog-loader'
 import { podcastLoader } from './loaders/podcast-loader'
 import { episodeLoader } from './loaders/episode-loader'
-import { EpisodeRoute } from './route-placeholders'
+import { EpisodePage } from './episode-page'
 import { PodcastPage } from './podcast-page'
 import { RouteErrorBoundary } from './route-error-boundary'
 
@@ -24,7 +24,7 @@ export const routes: RouteObject[] = [
       },
       {
         path: 'podcasts/:podcastId/episodes/:episodeId',
-        Component: EpisodeRoute,
+        Component: EpisodePage,
         loader: episodeLoader,
       },
     ],

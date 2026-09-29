@@ -4,9 +4,11 @@
   gap: var(--space-4);
 }
 
-.podcast-sidebar__identity {
+.podcast-sidebar__identity-link {
   display: grid;
   gap: var(--space-4);
+  color: inherit;
+  text-decoration: none;
 }
 
 .podcast-sidebar__image {
