@@ -28,13 +28,13 @@ describe('PodcastRepository integration', () => {
   it('fetches and maps podcast details through HTTP client', async () => {
     const catalogData = buildItunesCatalogResponse()
     const detailData = buildItunesDetailResponse()
-    const get = vi.fn().mockImplementation((url: string) =>
-      Promise.resolve(
-        new Response(
-          JSON.stringify(url.includes('lookup') ? detailData : catalogData),
+    const get = vi
+      .fn()
+      .mockImplementation((url: string) =>
+        Promise.resolve(
+          new Response(JSON.stringify(url.includes('lookup') ? detailData : catalogData)),
         ),
-      ),
-    )
+      )
     const httpClient = createFetchHttpClient(get as unknown as typeof fetch)
     const repository = createPodcastRepository(httpClient)
 

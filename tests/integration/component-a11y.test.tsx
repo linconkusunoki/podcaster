@@ -54,9 +54,7 @@ describe('component accessibility', () => {
   })
 
   it('Input has no axe violations', async () => {
-    const { container } = render(
-      <Input id="test-input" label="Test label" status="helper text" />,
-    )
+    const { container } = render(<Input id="test-input" label="Test label" status="helper text" />)
     const results = await axe.run(container)
     expect(results.violations).toEqual([])
   })

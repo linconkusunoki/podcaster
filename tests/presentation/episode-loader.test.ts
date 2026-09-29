@@ -29,9 +29,9 @@ describe('createEpisodeLoader', () => {
   it('rejects missing route IDs', async () => {
     const loader = createEpisodeLoader({} as PodcastRepository)
 
-    await expect(
-      loader({ params: { podcastId: 'podcast-42' } } as never),
-    ).rejects.toThrow('Episode not found: missing')
+    await expect(loader({ params: { podcastId: 'podcast-42' } } as never)).rejects.toThrow(
+      'Episode not found: missing',
+    )
   })
 
   it('returns fresh cached episode details without requesting the repository', async () => {
