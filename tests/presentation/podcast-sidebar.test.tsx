@@ -17,10 +17,7 @@ describe('PodcastSidebar', () => {
 
     expect(screen.getByRole('heading', { name: podcast.title })).toBeInTheDocument()
     expect(screen.getByRole('link')).toHaveAttribute('href', `/podcasts/${podcast.id}`)
-    expect(screen.getByRole('img', { name: podcast.title })).toHaveAttribute(
-      'src',
-      podcast.imageUrl,
-    )
+    expect(screen.getByRole('presentation')).toHaveAttribute('src', podcast.imageUrl)
     expect(screen.getByText(podcast.description)).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Show more' })).not.toBeInTheDocument()
   })

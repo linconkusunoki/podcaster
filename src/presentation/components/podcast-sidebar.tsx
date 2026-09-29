@@ -24,7 +24,7 @@ export function PodcastSidebar({ podcast }: PodcastSidebarProps) {
           <img
             className="podcast-sidebar__image"
             src={podcast.imageUrl}
-            alt={podcast.title}
+            alt=""
             style={{ viewTransitionName: `podcast-artwork-${podcast.id}` }}
           />
           <h2 id="podcast-sidebar-title">{podcast.title}</h2>
