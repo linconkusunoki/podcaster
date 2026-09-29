@@ -27,7 +27,6 @@ export function EpisodePage() {
           className="episode-page__description"
           dangerouslySetInnerHTML={{ __html: episode.description }}
         />
-        {/* Trust boundary: episode.description HTML is sourced from Apple's API and rendered as trusted content. */}
       </article>
     </div>
   )

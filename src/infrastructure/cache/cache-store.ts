@@ -15,6 +15,10 @@ export function podcastDetailCacheKey(podcastId: string): string {
   return `podcast:detail:${podcastId}`
 }
 
+export function episodeCacheKey(podcastId: string, episodeId: string): string {
+  return `podcast:episode:${podcastId}:${episodeId}`
+}
+
 export function createLocalStorageCacheStore(storage: Storage = localStorage): CacheStore {
   return {
     read<T>(key: string) {

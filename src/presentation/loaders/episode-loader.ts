@@ -6,6 +6,7 @@ import type { EpisodeDetails, PodcastRepository } from '@/application/ports/podc
 import { createPodcastRepository } from '@/infrastructure/apple/podcast-repository'
 import {
   createLocalStorageCacheStore,
+  episodeCacheKey,
   isCacheFresh,
   type CacheStore,
 } from '@/infrastructure/cache/cache-store'
@@ -13,10 +14,6 @@ import { createFetchHttpClient } from '@/infrastructure/http/fetch-client'
 
 const repository = createPodcastRepository(createFetchHttpClient())
 const cacheStore = createLocalStorageCacheStore()
-
-function episodeCacheKey(podcastId: string, episodeId: string): string {
-  return `podcast:episode:${podcastId}:${episodeId}`
-}
 
 export function createEpisodeLoader(
   podcastRepository: PodcastRepository = repository,

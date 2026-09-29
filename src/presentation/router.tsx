@@ -16,7 +16,11 @@ export const routes: RouteObject[] = [
     HydrateFallback: InitialLoadingShell,
     ErrorBoundary: RouteErrorBoundary,
     children: [
-      { index: true, Component: CatalogPage, loader: catalogLoader },
+      {
+        index: true,
+        Component: CatalogPage,
+        loader: catalogLoader,
+      },
       {
         path: 'podcasts/:podcastId',
         Component: PodcastPage,
