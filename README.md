@@ -2,6 +2,10 @@
 
 A React SPA for browsing Apple Podcasts with catalog, podcast detail, and episode detail views.
 
+## Requirements
+
+- Node.js >= 20.19.0
+
 ## Development
 
 ```bash
